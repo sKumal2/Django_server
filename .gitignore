@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Local development files
+db.sqlite3
+.env
+.venv/
+venv/
+
+# Django-generated files
+staticfiles/
+media/
+
+# macOS
+.DS_Store
