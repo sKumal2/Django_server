@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reddit Communities</title>
+    <link rel="stylesheet" href="{% static 'communities/css/style.css' %}">
+</head>
+<body>
+    <header class="hero">
+        <p class="eyebrow">DISCOVER</p>
+        <h1>Communities That Match Your Curiosity</h1>
+        <p class="subtext">Find active groups by topic, vibe, and momentum. Join conversations that are actually worth your time.</p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="#communities-list">Explore Communities</a>
+            <a class="btn btn-ghost" href="/">Back To Home</a>
+        </div>
+    </header>
+
+    <main id="communities-list" class="layout">
+        <section class="cards">
+            <article class="community-card">
+                <div class="tag">Technology</div>
+                <h2>r/django</h2>
+                <p>Build, scale, and troubleshoot Django projects with practical examples.</p>
+                <div class="stats">
+                    <span>1.3M members</span>
+                    <span>1.8k online</span>
+                </div>
+                <button class="join">Join</button>
+            </article>
+
+            <article class="community-card">
+                <div class="tag">Programming</div>
+                <h2>r/learnprogramming</h2>
+                <p>Beginner-friendly help, project advice, and learning roadmaps.</p>
+                <div class="stats">
+                    <span>4.8M members</span>
+                    <span>6.2k online</span>
+                </div>
+                <button class="join">Join</button>
+            </article>
+
+            <article class="community-card">
+                <div class="tag">Business</div>
+                <h2>r/startups</h2>
+                <p>Founders sharing launch stories, GTM experiments, and hard lessons.</p>
+                <div class="stats">
+                    <span>1.1M members</span>
+                    <span>950 online</span>
+                </div>
+                <button class="join">Join</button>
+            </article>
+
+            <article class="community-card">
+                <div class="tag">Frontend</div>
+                <h2>r/webdev</h2>
+                <p>Modern frontend architecture, tooling discussions, and design critiques.</p>
+                <div class="stats">
+                    <span>2.2M members</span>
+                    <span>2.4k online</span>
+                </div>
+                <button class="join">Join</button>
+            </article>
+
+            <article class="community-card">
+                <div class="tag">AI</div>
+                <h2>r/MachineLearning</h2>
+                <p>Research drops, model insights, and thoughtful ML engineering threads.</p>
+                <div class="stats">
+                    <span>3.2M members</span>
+                    <span>3.7k online</span>
+                </div>
+                <button class="join">Join</button>
+            </article>
+
+            <article class="community-card">
+                <div class="tag">Design</div>
+                <h2>r/userexperience</h2>
+                <p>Product UX breakdowns, usability advice, and portfolio feedback.</p>
+                <div class="stats">
+                    <span>620k members</span>
+                    <span>530 online</span>
+                </div>
+                <button class="join">Join</button>
+            </article>
+        </section>
+
+        <aside class="sidebar">
+            <div class="panel">
+                <h3>Today On Reddit</h3>
+                <ul>
+                    <li>Top growth: r/sideprojects</li>
+                    <li>Most comments: r/python</li>
+                    <li>Fastest rising: r/buildinpublic</li>
+                </ul>
+            </div>
+            <div class="panel">
+                <h3>How To Pick A Community</h3>
+                <p>Look for clear moderation, quality discussions, and recent activity before you join.</p>
+            </div>
+        </aside>
+    </main>
+</body>
+</html>

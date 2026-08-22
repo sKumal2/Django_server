@@ -1,6 +1,7 @@
 from django.shortcuts import render
-from django.http import HttpResponse
 
 # Create your views here.
 def communities(request):
-    return HttpResponse("Hello, this is the communities page.")
+    return render(request, 'communities/index.html')
+
+
