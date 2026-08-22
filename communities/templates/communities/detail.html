@@ -1,0 +1,19 @@
+{% extends 'communities/base_community.html' %}
+
+{% block community_content %}
+{% if posts %}
+<main class="community-feed">
+    {% for post in posts %}
+    <article class="community-post">
+        <p class="post-meta">Posted by u/{{ post.author }} • {{ post.time }}</p>
+        <h2>{{ post.title }}</h2>
+        <p>{{ post.body }}</p>
+        <div class="post-stats">
+            <span>{{ post.upvotes }} upvotes</span>
+            <span>{{ post.comments }} comments</span>
+        </div>
+    </article>
+    {% endfor %}
+</main>
+{% endif %}
+{% endblock %}

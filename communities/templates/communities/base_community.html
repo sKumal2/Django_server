@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{{ community_name }} - Reddit Communities{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'communities/css/style.css' %}">
+</head>
+<body>
+    <header class="hero">
+        <p class="eyebrow">COMMUNITY</p>
+        <h1>{{ community_name }}</h1>
+        <p class="subtext">Slug: {{ slug }}</p>
+        <div class="hero-actions">
+            <a class="btn btn-primary" href="/communities/">All Communities</a>
+            <a class="btn btn-ghost" href="/">Back To Home</a>
+        </div>
+    </header>
+
+    {% block community_content %}{% endblock %}
+</body>
+</html>
