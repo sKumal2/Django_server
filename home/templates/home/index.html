@@ -4,22 +4,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Redix - Home</title>
     <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
 </head>
 <body>
-    <h1>Welcome to the Home Page</h1>
-    <p>This is the home page of the Django application.</p>
-    <p>User: {{ user.0.name }}</p>
+    <header class="topbar">
+        <div class="topbar-left">
+            <div class="logo-badge">R</div>
+            <span class="brand">Reddit</span>
+        </div>
+        <div class="search-wrap">
+            <input type="text" placeholder="Search Redix" aria-label="Search Redix">
+        </div>
+        <div class="topbar-right">
+            {% if active_user %}
+                <span class="user-pill">Logged in as {{ user.0.name }}</span>
+            {% else %}
+                <span class="user-pill offline">Guest Mode</span>
+            {% endif %}
+            <button class="btn btn-outline">Log in</button>
+            <button class="btn btn-primary">Sign up</button>
+        </div>
+    </header>
 
-    {%for i in user %}
-        <p>{{ i.name }}</p>
-    {% endfor %}
+    <main class="page-grid">
+        <aside class="left-nav card">
+            <h3>Home</h3>
+            <ul>
+                <li><a href="#">Popular</a></li>
+                <li><a href="#">Latest</a></li>
+                <li><a href="#">Rising</a></li>
+                <li><a href="#">Saved</a></li>
+            </ul>
 
-    {%if active_user %}
-        <p>Active User : {{user.0.name }}</p>
-    {% else %}
-        <p>Inactive User</p>
-    {% endif %}
+            <h3>Custom Feeds</h3>
+            <ul>
+                <li><a href="#">Tech Talk</a></li>
+                <li><a href="#">Design Corner</a></li>
+                <li><a href="#">Coding Memes</a></li>
+            </ul>
+        </aside>
+
+        <section class="feed">
+            <article class="post card">
+                <div class="post-votes">
+                    <button aria-label="upvote">▲</button>
+                    <strong>3.4k</strong>
+                    <button aria-label="downvote">▼</button>
+                </div>
+                <div class="post-body">
+                    <p class="meta">r/webdev • Posted by u/frontendfan • 2h ago</p>
+                    <h2>Showcase: Built a clean Django + HTMX dashboard in one weekend</h2>
+                    <p>Sharing architecture notes and lessons learned while keeping things simple and fast.</p>
+                    <div class="post-actions">
+                        <a href="#">184 Comments</a>
+                        <a href="#">Share</a>
+                        <a href="#">Save</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post card">
+                <div class="post-votes">
+                    <button aria-label="upvote">▲</button>
+                    <strong>1.1k</strong>
+                    <button aria-label="downvote">▼</button>
+                </div>
+                <div class="post-body">
+                    <p class="meta">r/python • Posted by u/scripter • 5h ago</p>
+                    <h2>What is your favorite Python trick that saves real time?</h2>
+                    <p>Mine is using dataclasses for tiny data models. Curious what your practical favorites are.</p>
+                    <div class="post-actions">
+                        <a href="#">96 Comments</a>
+                        <a href="#">Share</a>
+                        <a href="#">Save</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="post card">
+                <div class="post-votes">
+                    <button aria-label="upvote">▲</button>
+                    <strong>867</strong>
+                    <button aria-label="downvote">▼</button>
+                </div>
+                <div class="post-body">
+                    <p class="meta">r/startups • Posted by u/buildergirl • 8h ago</p>
+                    <h2>Launched my MVP and got first 100 users this week</h2>
+                    <p>Big milestone. Happy to answer questions on what worked and what failed in week one.</p>
+                    <div class="post-actions">
+                        <a href="#">57 Comments</a>
+                        <a href="#">Share</a>
+                        <a href="#">Save</a>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <aside class="right-rail">
+            <div class="card side-panel">
+                <h3>About Redix</h3>
+                <p>Redix is a community hub where people discuss coding, culture, products, and more.</p>
+                <button class="btn btn-primary full">Create Post</button>
+            </div>
+
+            <div class="card side-panel">
+                <h3>Trending Communities</h3>
+                <ul class="community-list">
+                    <li>r/javascript</li>
+                    <li>r/django</li>
+                    <li>r/startups</li>
+                    <li>r/technology</li>
+                    <li>r/learnprogramming</li>
+                </ul>
+            </div>
+
+            <div class="card side-panel">
+                <h3>Suggested People</h3>
+                {% for i in user %}
+                    <p class="suggested-user">u/{{ i.name }}</p>
+                {% empty %}
+                    <p class="suggested-user">No suggestions yet</p>
+                {% endfor %}
+            </div>
+        </aside>
+    </main>
 </body>
 </html>
